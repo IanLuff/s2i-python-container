@@ -59,10 +59,10 @@ RUN source scl_source enable python27 && \
 # In order to drop the root user, we have to make some directories world
 # writable as OpenShift default security model is to run the container under
 # random UID.
-RUN chown -R 1001:0 /opt/app-root && chmod -R ug+rwx /opt/app-root && \
+RUN chown -R 38356:0 /opt/app-root && chmod -R ug+rwx /opt/app-root && \
     rpm-file-permissions
 
-USER 1001
+USER 38356
 
 # Set the default CMD to print the usage of the language image.
 CMD $STI_SCRIPTS_PATH/usage
